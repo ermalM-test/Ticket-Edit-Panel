@@ -1,0 +1,79 @@
+.subtask {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &:not(:last-child) {
+    border-bottom: 1px solid #e9eef9;
+  }
+  &.checked {
+    background-color: #f1f3f8;
+  }
+
+  .subtask-check-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e9eef9;
+    background-color: rgba(#687196, 0.1);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & * {
+      user-select: none;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+    }
+
+    svg-icon {
+      transform: scale(0);
+    }
+  }
+  &.checked .subtask-check-container {
+    border: 1px solid rgba(#3e40db, 0.2);
+    background-color: rgba(#3e40db, 0.1);
+
+    svg-icon {
+      animation: 0.4s forwards iconCheckIn;
+    }
+  }
+
+  @keyframes iconCheckIn {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .subtask-text-container {
+    color: #687196;
+    font-size: 14px;
+    flex: 1;
+    input {
+      border: none;
+      outline: 1px solid #aaafff;
+      box-shadow: 0 1.5px 3px -1.5px #c8cfe9, 0 1px 0.5px -1px #d8dceb;
+      padding: 0 6px;
+      margin: 0 -6px;
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}

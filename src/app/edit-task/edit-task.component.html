@@ -1,0 +1,51 @@
+<div
+  class="edit_task-main position-fixed top-0 start-0 bottom-0 end-0 d-flex justify-content-end align-items-stretch z-0"
+>
+  <div
+    class="edit_task-background position-absolute top-0 start-0 bottom-0 end-0"
+  ></div>
+  <div class="edit_task-content rounded-start-3 z-1 bg-white">
+    <div class="header">
+      <h3>Mega Electronix</h3>
+      <p class="m-0">Edit task</p>
+    </div>
+    <div class="navigation-buttons">
+      <ng-container *ngFor="let btn of navigationButtons">
+        <button
+          class="navigation-button"
+          [ngClass]="{ selected: btn.text === activeButton.text }"
+          (click)="navigationButtonClick(btn)"
+        >
+          <svg-icon
+            [iconName]="btn.icon"
+            [color]="btn.text === activeButton.text ? '#3E40DB' : '#687196'"
+            width="12px"
+            height="12px"
+          ></svg-icon>
+          <span>{{ btn.text }}</span>
+        </button>
+      </ng-container>
+    </div>
+    <div class="navigation-content">
+      <div
+        class="details-view"
+        *ngIf="activeButton.text == 'Details'; else other_content"
+      >
+        <app-banner
+          text="Ask Logic Pilot to generate subtasks or to summarize comments"
+        ></app-banner>
+
+        <app-fields></app-fields>
+      </div>
+      <ng-template #other_content>
+        <div class="placeholder-container">
+          <h3>{{ activeButton.text }}</h3>
+          <div class="placeholder-box"></div>
+        </div>
+      </ng-template>
+    </div>
+
+    <!-- Subtasks component -->
+    <subtasks></subtasks>
+  </div>
+</div>

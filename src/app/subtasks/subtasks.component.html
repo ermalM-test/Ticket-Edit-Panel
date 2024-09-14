@@ -1,0 +1,45 @@
+<div class="header">
+  <h3>Subtasks</h3>
+  <div class="subtasks-progress">
+    <div
+      class="progress-bar"
+      [ngStyle]="{ '--background_width': this.subtasksBarWidth + '%' }"
+    ></div>
+    <div class="progress-values">
+      <span>
+        {{ subtasksCheckedIndex }}
+      </span>
+      /
+      <span>
+        {{ subtasks.length }}
+      </span>
+    </div>
+  </div>
+</div>
+<div class="subtasks-container">
+  <div class="subtasks_table">
+    <div class="subtasks_table-header">
+      <p>Subtask name</p>
+    </div>
+    <div class="subtasks_table-body">
+      <ng-container *ngFor="let task of subtasks; let i = index">
+        <subtask-list-item
+          [subtask]="task"
+          (updateTaskStatus)="calculateBarWidth()"
+          (removeTask)="removeTask()"
+        ></subtask-list-item>
+      </ng-container>
+    </div>
+    <div class="subtasks_table-footer" (click)="addSubtask()">
+      <div class="add-subtask">
+        <svg-icon
+          iconName="icon-plus"
+          width="14px"
+          height="14px"
+          [color]="'#687196'"
+        ></svg-icon>
+        <p>Add subtask</p>
+      </div>
+    </div>
+  </div>
+</div>

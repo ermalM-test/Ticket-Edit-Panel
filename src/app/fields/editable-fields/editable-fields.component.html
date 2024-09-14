@@ -1,0 +1,26 @@
+<div class="row-container">
+  <div class="input-label">
+    <svg-icon [iconName]="iconName" [color]="'#687196'"></svg-icon>
+    <span>{{ label }}</span>
+  </div>
+  <div
+    class="input-container"
+    (click)="startEditing()"
+    [ngClass]="{ 'edit-active': isEditing }"
+  >
+    <input
+      type="text"
+      *ngIf="isEditing"
+      [formControl]="formControl"
+      (blur)="endEditing()"
+      [attr.placeholder]="placeholder"
+    />
+    <span
+      class="input-placeholder"
+      *ngIf="!isEditing"
+      style="--placeholder: '{{ placeholder }}'"
+    >
+      {{ formControl.value }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<form [formGroup]="form" class="fields-container">
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-status" [color]="'#B13600'"></svg-icon>
+      <span>Status</span>
+    </div>
+    <div class="input-container status">
+      <span [ngClass]="{ unpaid: form.get('status')?.value == 'unpaid' }">
+        {{ form.get("status")?.value }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-assignee" [color]="'#687196'"></svg-icon>
+      <span>Assignee</span>
+    </div>
+    <div
+      class="input-container"
+      (click)="editField('assignee')"
+      [ngClass]="{ 'edit-active': isEditing.assignee }"
+    >
+      <input
+        type="text"
+        *ngIf="isEditing.assignee"
+        formControlName="assignee"
+        (blur)="saveField('assignee')"
+        #assigneeInput
+      />
+      <span
+        class="input-placeholder"
+        *ngIf="!isEditing.assignee"
+        style="--placeholder: 'Enter assignee'"
+        >{{ form.get("assignee")?.value }}</span
+      >
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-coowner" [color]="'#687196'"></svg-icon>
+      <span>Co-owner</span>
+    </div>
+    <div
+      class="input-container"
+      (click)="editField('coOwner')"
+      [ngClass]="{ 'edit-active': isEditing.coOwner }"
+    >
+      <input
+        type="text"
+        *ngIf="isEditing.coOwner"
+        formControlName="coOwner"
+        (blur)="saveField('coOwner')"
+        #coOwnerInput
+      />
+      <span
+        class="input-placeholder"
+        *ngIf="!isEditing.coOwner"
+        style="--placeholder: 'Enter Co-owner'"
+        >{{ form.get("coOwner")?.value }}</span
+      >
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-importance" [color]="'#687196'"></svg-icon>
+      <span>Importance</span>
+    </div>
+    <div
+      class="input-container"
+      (click)="editField('importance')"
+      [ngClass]="{ 'edit-active': isEditing.importance }"
+    >
+      <input
+        type="text"
+        *ngIf="isEditing.importance"
+        formControlName="importance"
+        (blur)="saveField('importance')"
+        #importanceInput
+      />
+      <span
+        class="input-placeholder"
+        *ngIf="!isEditing.importance"
+        style="--placeholder: 'Enter importance'"
+        >{{ form.get("importance")?.value }}</span
+      >
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-customername" [color]="'#687196'"></svg-icon>
+      <span>Costumer Name</span>
+    </div>
+    <div
+      class="input-container"
+      (click)="editField('costumerName')"
+      [ngClass]="{ 'edit-active': isEditing.costumerName }"
+    >
+      <input
+        type="text"
+        *ngIf="isEditing.costumerName"
+        formControlName="costumerName"
+        (blur)="saveField('costumerName')"
+        #costumerNameInput
+      />
+      <span
+        class="input-placeholder"
+        *ngIf="!isEditing.costumerName"
+        style="--placeholder: 'Enter name'"
+        >{{ form.get("costumerName")?.value }}</span
+      >
+    </div>
+  </div>
+  <div class="row-container">
+    <div class="input-label">
+      <svg-icon iconName="icon-invoiceid" [color]="'#687196'"></svg-icon>
+      <span>Invoice ID</span>
+    </div>
+    <div
+      class="input-container"
+      (click)="editField('invoiceId')"
+      [ngClass]="{ 'edit-active': isEditing.invoiceId }"
+    >
+      <input
+        type="text"
+        *ngIf="isEditing.invoiceId"
+        formControlName="invoiceId"
+        (blur)="saveField('invoiceId')"
+        #invoiceIdInput
+      />
+      <span
+        class="input-placeholder"
+        *ngIf="!isEditing.invoiceId"
+        style="--placeholder: 'Enter invoice ID'"
+        >{{ form.get("invoiceId")?.value }}</span
+      >
+    </div>
+  </div>
+</form>
