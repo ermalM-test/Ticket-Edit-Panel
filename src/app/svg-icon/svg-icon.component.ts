@@ -5,7 +5,8 @@ import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'svg-icon',
-  template: '<div [innerHTML]="sanitizedSvg" class="svg-icon-container"></div>',
+  template:
+    '<div [innerHTML]="sanitizedSvg" class="svg-icon-container" [style.width]="width" [style.height]="height"></div>',
   styles: [
     '.svg-icon-container{display:flex;align-items:center;justify-content:center} ',
   ],
