@@ -53,6 +53,10 @@
       &.selected {
         background-color: rgba(#3e40db, 0.1);
         color: #3e40db;
+
+        svg-icon {
+          color: #3e40db;
+        }
       }
     }
   }
