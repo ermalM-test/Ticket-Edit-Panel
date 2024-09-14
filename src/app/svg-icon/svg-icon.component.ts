@@ -9,8 +9,6 @@ import { firstValueFrom } from 'rxjs';
   styles: [
     '.svg-icon-container{display:flex;align-items:center;justify-content:center} ',
   ],
-  // templateUrl: './svg-icon.component.html',
-  // styles: ['img,svg{vertical-align:auto;line-height:1}'],
 })
 export class SvgIconComponent {
   @Input() iconName: string = '';
