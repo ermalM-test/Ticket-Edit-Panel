@@ -12,7 +12,6 @@ import { BannerComponent } from './banner/banner.component';
 import { FieldsComponent } from './fields/fields.component';
 import { SubtasksComponent } from './subtasks/subtasks.component';
 import { ListItemComponent } from './subtasks/list-item/list-item.component';
-import { EditableFieldsComponent } from './fields/editable-fields/editable-fields.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { EditableFieldsComponent } from './fields/editable-fields/editable-field
     FieldsComponent,
     SubtasksComponent,
     ListItemComponent,
-    EditableFieldsComponent,
   ],
   imports: [
     BrowserModule,
