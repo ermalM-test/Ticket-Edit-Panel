@@ -1,89 +1,93 @@
-.header,
-.subtasks-container {
-  padding: 16px 20px;
-}
-.header {
-  border-bottom: 1px solid #e6ebf0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  h3 {
-    font-size: 20px;
-    font-weight: 500;
-    color: #2f3059;
-    margin: 0;
-    line-height: 1;
-  }
+.subtasks-main {
+  margin: 16px -20px -16px -20px;
 
-  .subtasks-progress {
+  .header,
+  .subtasks-container {
+    padding: 16px 20px;
+  }
+  .header {
+    border-bottom: 1px solid #e6ebf0;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #2f3059;
+      margin: 0;
+      line-height: 1;
+    }
 
-    .progress-bar {
-      position: relative;
-      width: 94px;
-      height: 10px;
-      background-color: rgba(#3e40db, 0.3);
-      border-radius: 3px;
-      overflow: hidden;
+    .subtasks-progress {
+      display: flex;
+      align-items: center;
+      gap: 6px;
 
-      &::before {
-        content: "";
+      .progress-bar {
+        position: relative;
+        width: 94px;
+        height: 10px;
+        background-color: rgba(#3e40db, 0.3);
         border-radius: 3px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: var(--background_width);
-        background: #3e40db;
-        transition: width 0.2s;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          border-radius: 3px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: var(--background_width);
+          background: #3e40db;
+          transition: width 0.2s;
+        }
+      }
+      .progress-values {
+        display: flex;
+        align-items: center;
+        color: #687196;
+        font-size: 14px;
       }
     }
-    .progress-values {
-      display: flex;
-      align-items: center;
-      color: #687196;
-      font-size: 14px;
-    }
   }
-}
-.subtasks_table {
-  border: 1px solid #e9eef9;
-  border-radius: 6px;
-  overflow: hidden;
+  .subtasks_table {
+    border: 1px solid #e9eef9;
+    border-radius: 6px;
+    overflow: hidden;
 
-  .subtasks_table-header {
-    padding: 8px;
-    background-color: #fafbfd;
-    border-bottom: 1px solid #e9eef9;
+    .subtasks_table-header {
+      padding: 8px;
+      background-color: #fafbfd;
+      border-bottom: 1px solid #e9eef9;
 
-    p {
-      margin: 0;
-      font-size: 12px;
-    }
-  }
-  .subtasks_table-footer {
-    padding: 8px;
-    border-top: 1px solid #e9eef9;
-    background-color: #fafbfd;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: #f1f3f9;
-    }
-
-    .add-subtask {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px;
       p {
-        line-height: 1;
         margin: 0;
-        font-size: 14px;
-        color: #687196;
+        font-size: 12px;
+      }
+    }
+    .subtasks_table-footer {
+      padding: 8px;
+      border-top: 1px solid #e9eef9;
+      background-color: #fafbfd;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f1f3f9;
+      }
+
+      .add-subtask {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px;
+        p {
+          line-height: 1;
+          margin: 0;
+          font-size: 14px;
+          color: #687196;
+        }
       }
     }
   }

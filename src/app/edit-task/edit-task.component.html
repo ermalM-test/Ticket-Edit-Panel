@@ -27,16 +27,17 @@
       </ng-container>
     </div>
     <div class="navigation-content">
-      <div
-        class="details-view"
-        *ngIf="activeButton.text == 'Details'; else other_content"
-      >
-        <app-banner
-          text="Ask Logic Pilot to generate subtasks or to summarize comments"
-        ></app-banner>
+      <ng-container *ngIf="activeButton.text == 'Details'; else other_content">
+        <div class="details-view">
+          <app-banner
+            text="Ask Logic Pilot to generate subtasks or to summarize comments"
+          ></app-banner>
 
-        <app-fields></app-fields>
-      </div>
+          <app-fields></app-fields>
+        </div>
+        <!-- Subtasks component -->
+        <subtasks></subtasks>
+      </ng-container>
       <ng-template #other_content>
         <div class="placeholder-container">
           <h3>{{ activeButton.text }}</h3>
@@ -44,8 +45,5 @@
         </div>
       </ng-template>
     </div>
-
-    <!-- Subtasks component -->
-    <subtasks></subtasks>
   </div>
 </div>
